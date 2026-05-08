@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pozabljenogstyle.css">
+  <title>Pozabljeno geslo</title>
+</head>
+
+<body class="pisavca">
+
+  <div class="glava">
+    <div class="podglava">
+      <div class="slikca">
+        <img class="slika" src="slike/logo.svg" alt="logo">
+      </div>
+    </div>
+  </div>
+  
+  <div class="skupno">
+
+    <div class="naslov">
+      <h1>Nastavi novo geslo</h1>
+    </div>
+
+    <div class="tekst">
+      <p>Vnesite svoj e-poštni naslov in kliknite »Nastavi novo geslo«. Nato vam bomo poslali e-pošto z nadaljnjimi navodili.</p>
+    </div>
+    
+    <form id="registerForm" method="post" action="">
+      <div class="eposta">
+        <input type="email" id="email-reg" name="email" placeholder="E-mail*">
+        <div id="napaka-email-reg" class="napaka"></div>
+      </div>
+    </form>
+
+    <div class="ges">
+      <button class="pisavca" type="submit" id="gumb-spremeni-geslo">Spremeni geslo</button>
+    </div>
+    
+    <div class="nazaj">
+      <a href="index.html"><button class="pisavca" type="button">Nazaj na prijavo</button></a>
+    </div>
+
+    <div class="podnapisi">
+      <p>Contact Imprint Privacy Accessibility GTC</p>
+    </div>
+
+  </div>
+
+
+  <!-- ------------------------- DODANO (popup okno) ------------------------- -->
+  <div id="pojavno-okno" class="alert-overlay">
+    <div class="alert-box">
+      <div class="alert-icon">✔</div>
+      <div class="alert-text">Navodila za spremembo gesla smo poslali na vaš e-mail!</div>
+      <button id="gumb-v-redu" class="alert-btn">V redu</button>
+    </div>
+  </div>
+
+
+  <!-- ------------------------- DODANO (validacija + prikaz okna) ------------------------- -->
+  <script>
+    document.getElementById("gumb-spremeni-geslo").addEventListener("click", function(dogodek) {
+      dogodek.preventDefault();
+
+      const poljeEposta = document.getElementById("email-reg").value.trim();
+      document.getElementById("napaka-email-reg").textContent = "";
+
+      if (poljeEposta === "") {
+        document.getElementById("napaka-email-reg").textContent = "Vnesite e-mail.";
+        return;
+      }
+
+      // pokaži pojavno okno
+      document.getElementById("pojavno-okno").style.display = "flex";
+    });
+
+    document.getElementById("gumb-v-redu").addEventListener("click", function() {
+      document.getElementById("pojavno-okno").style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

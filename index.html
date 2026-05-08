@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="loginstyle.css">
+  <title>Prijava</title>
+</head>
+
+<body class="pisavca">
+
+  <div class="glava">
+    <div class="podglava">
+      <div class="slikca">
+        <img class="slika" src="slike/logo.svg" alt="logo">
+      </div>
+    </div>
+  </div>
+
+  <div class="telo">
+    <div class="skupno">
+
+      <div class="naslov">
+        <h1>LOG IN</h1>
+      </div>
+
+      <form id="loginsc" method="get" action="">
+        <div class="mail">
+          <input type="email" id="email" name="email" placeholder="E-mail*">
+          <div id="napaka-email" class="napaka"></div>
+        </div>
+
+        <div class="geslo">
+          <input type="password" id="geslo" name="geslo" placeholder="Geslo*">
+          <div id="napaka-geslo" class="napaka"></div>
+        </div>
+      </form>
+
+      <div class="pozges">
+        <a href="pozabljeno_geslo.html">Pozabljeno geslo?</a>
+      </div>
+
+      <div class="zapomni">
+        <form method="get" action="">
+          <input class="kvadrat" type="checkbox" name="zapomni" value="zapomni">
+          <label class="napis" for="zapomni">Zapomni si me</label><br>
+        </form>
+      </div>
+
+      <div class="prijavadiv">
+        <button class="gumbprijava pisavca" type="submit" form="loginsc">Prijava</button>
+      </div>
+
+      <hr>
+
+      <div class="regdiv">
+        <a href="registracija.html"><button class="gumbreg pisavca" type="submit">Registracija</button></a>
+      </div>
+
+      <!-- Credits / podnapisi -->
+      <div class="podnapisi">
+        <p>Contact Imprint Privacy Accessibility GTC</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ALERT POPUP -->
+  <div id="alert-popup" class="alert-overlay">
+    <div class="alert-box">
+      <div class="alert-icon">✔</div>
+      <div class="alert-text">Uspešno ste se prijavili!</div>
+      <button id="alert-ok" class="alert-btn">OK</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginsc").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const geslo = document.getElementById("geslo").value.trim();
+
+      document.getElementById("napaka-email").textContent = "";
+      document.getElementById("napaka-geslo").textContent = "";
+
+      let napaka = false;
+
+      if (email === "") {
+        document.getElementById("napaka-email").textContent = "Vnesite e-mail.";
+        napaka = true;
+      }
+      if (geslo === "") {
+        document.getElementById("napaka-geslo").textContent = "Vnesite geslo.";
+        napaka = true;
+      }
+
+      if (napaka) return;
+
+      // Prikaži alert popup
+      document.getElementById("alert-popup").style.display = "flex";
+    });
+
+    document.getElementById("alert-ok").addEventListener("click", function() {
+      document.getElementById("alert-popup").style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

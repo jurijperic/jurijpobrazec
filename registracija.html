@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="registracijastyle.css">
+  <title>Registracija</title>
+  <link class="favikon" rel="icon" type="image/svg+xml" href="slike/logo.svg">
+</head>
+<body class="pisavca">
+  <div class="skupno">
+    <div class="sredina">
+      <div class="glava">
+        <h1>REGISTRACIJA</h1>
+        <p>En račun za vse funkcije in storitve: Z vašim računom FC Bayern lahko brezplačno delite svojo strast z milijoni drugih navijačev in postanete del največje digitalne skupnosti FC Bayern.</p><br>
+        <p>Izpolnite vsa polja, označena z zvezdico (*).</p><br>
+      </div>
+
+      <div class="naziv">
+        <h1>OSEBNI PODATKI</h1>
+        <h2>Pozdrav*</h2>
+        <input type="radio" id="zenska" name="spol" value="zenska">
+        <label for="zenska">Ženska</label>
+        <input type="radio" id="moski" name="spol" value="moski">
+        <label for="moski">Moški</label>
+      </div>
+
+      <form id="registerForm" method="post" action="">
+        <div class="obrazec">
+          <div class="imepri">
+            <div class="ime">
+              <input type="text" id="ime" name="ime" placeholder="Ime*">
+              <div id="napaka-ime" class="napaka"></div>
+            </div>
+            <div class="priimek">
+              <input type="text" id="priimek" name="priimek" placeholder="Priimek*">
+              <div id="napaka-priimek" class="napaka"></div>
+            </div>
+          </div>
+
+          <div class="datges">
+            <div class="datumroj">
+              <input type="date" id="datumroj" name="datumroj">
+              <div id="napaka-datum" class="napaka"></div>
+            </div>
+            <div class="geslo">
+              <input type="password" id="geslo-reg" name="geslo" placeholder="Geslo*">
+              <div id="napaka-geslo-reg" class="napaka"></div>
+            </div>
+          </div>
+
+          <div class="eposta">
+            <input type="email" id="email-reg" name="email" placeholder="E-mail*">
+            <div id="napaka-email-reg" class="napaka"></div>
+          </div>
+        </div>
+
+        <div class="gumbi">
+          <div class="regidiv">
+            <button class="pisavca" type="submit">Shrani in nadaljuj</button>
+          </div>
+
+          <div class="nazaj">
+            <a href="index.html"><button class="pisavca" type="button">Nazaj na prijavo</button></a>
+          </div>
+        </div>
+      </form>
+
+      <div class="noga">
+        <p>odtis Varstvo podatkov Pogoji uporabe Dostopnost Pogosta vprašanja stik</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT POPUP -->
+  <div id="alert-popup" class="alert-overlay">
+    <div class="alert-box">
+      <div class="alert-icon">✔</div>
+      <div class="alert-text">Uspešno ste se registrirali!</div>
+      <button id="alert-ok" class="alert-btn">OK</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Reset napak
+      const errorFields = ["ime", "priimek", "datumroj", "geslo-reg", "email-reg"];
+      errorFields.forEach(id => {
+        const el = document.getElementById(`napaka-${id}`);
+        if (el) el.textContent = "";
+      });
+
+      const ime = document.getElementById("ime").value.trim();
+      const priimek = document.getElementById("priimek").value.trim();
+      const datum = document.getElementById("datumroj").value;
+      const geslo = document.getElementById("geslo-reg").value.trim();
+      const email = document.getElementById("email-reg").value.trim();
+      const spol = document.querySelector('input[name="spol"]:checked');
+
+      let napaka = false;
+
+      if (ime === "") {
+        document.getElementById("napaka-ime").textContent = "Vnesite ime.";
+        napaka = true;
+      }
+      if (priimek === "") {
+        document.getElementById("napaka-priimek").textContent = "Vnesite priimek.";
+        napaka = true;
+      }
+      if (!spol) {
+        // Lahko dodaš napako k spolu, če želiš
+        // Trenutno jo izpuščam, ker ni polje z napako-divom
+      }
+      if (datum === "") {
+        document.getElementById("napaka-datum").textContent = "Izberite datum rojstva.";
+        napaka = true;
+      }
+      if (geslo === "") {
+        document.getElementById("napaka-geslo-reg").textContent = "Vnesite geslo.";
+        napaka = true;
+      }
+      if (email === "") {
+        document.getElementById("napaka-email-reg").textContent = "Vnesite e-mail.";
+        napaka = true;
+      }
+
+      if (napaka) return;
+
+      // Prikaži alert popup
+      document.getElementById("alert-popup").style.display = "flex";
+    });
+
+    document.getElementById("alert-ok").addEventListener("click", function() {
+      document.getElementById("alert-popup").style.display = "none";
+    });
+  </script>
+</body>
+</html>
