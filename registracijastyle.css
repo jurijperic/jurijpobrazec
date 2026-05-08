@@ -1,0 +1,232 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;  /*ne steje padding+margin  u mere diva*/
+}
+
+body {
+  margin: 0;
+  height: 100%;
+	width:100%;
+  background-image: 
+    linear-gradient(to top,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(255, 0, 0, 0.7) 25%, 
+      rgba(255, 0, 0, 0.5) 50%,  
+      rgba(255, 0, 0, 0.3) 75%,   
+      rgba(255, 0, 0, 0) 100%      
+    ),
+    url("slike/odzadje.svg");     
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.pisavca {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.favikon{
+	width:64px;
+	height:64px;
+}
+.skupno{
+	display: flex;
+	padding:0;
+	margin:0;
+	height:100%;
+	min-height: 100%;
+	width:100%;
+	display: flex;  
+	justify-content: center;
+	align-items: center;     
+}
+
+
+.sredina{
+	display: flex;
+	background-color:white;
+	width: 850px;          
+	height:100%;
+	color:black;
+	flex-direction: column; /* divi u tem divi boju navpicno dol postavljeni*/
+}
+.glava{
+	width:100%;
+	height:180px;
+	padding:2%;
+	font-size: 100%;
+	
+}
+.glava h1 {
+    font-size: 200%;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.naziv{
+	width:100%;
+	height:110px;
+	padding-left:10%;
+	font-size:100%;
+	margin-top:6%;
+}
+.naziv h1{
+	font-size:200%;
+}
+.naziv h2{
+	font-size:120%;
+	margin-bottom:1%;
+	margin-top:1%;
+}
+.naziv input{
+	height:15px;
+	width:15px;
+	
+}
+.obrazec{
+	width:100%;
+	height:200px;
+	font-size: 100%;
+	padding-left:10%;
+	
+}
+.imepri{
+	height:40px;
+	width:90%;
+	display: flex;
+	
+}
+.ime{
+	height:40px;
+	width:45%;
+	display: flex;
+	margin-right:10%;
+}
+.ime input{
+	height:100%;
+	width:100%;
+	border: none; 
+	border-bottom:2px solid black;
+	background-color: #f0f0f0;
+	font-size:100%;
+	padding:2%;
+}
+.priimek{
+	width:45%;
+	height:40px;
+	display: flex;
+}
+.priimek input{
+	height:100%;
+	width:100%;
+	border: none; 
+	border-bottom:2px solid black;
+	background-color: #f0f0f0;
+	font-size:100%;
+	padding:2%;
+}
+
+.datges{
+	height:40px;
+	width:90%;
+	display: flex;
+	margin-top:3%;
+	
+}
+.datumroj{
+	height:40px;
+	width:45%;
+	display: flex;
+	margin-right:10%;
+}
+.datumroj input{
+	height:100%;
+	width:100%;
+	border: none; 
+	border-bottom:2px solid black;
+	background-color: #f0f0f0;
+	font-size:100%;
+	padding:2%;
+}
+.geslo{
+	height:40px;
+	width:45%;
+	display: flex;
+}
+.geslo input{
+	height:100%;
+	width:100%;
+	border: none; 
+	border-bottom:2px solid black;
+	background-color: #f0f0f0;
+	font-size:100%;
+	padding:2%;
+}
+
+
+.eposta{
+	height:40px;
+	width:90%;
+	margin-top:3%;
+}
+.eposta input{
+	height:100%;
+	width:100%;
+	border: none; 
+	border-bottom:2px solid black;
+	background-color: #f0f0f0;
+	font-size:100%;
+	padding:2%;
+	
+}
+.gumbi{
+	width:100%;
+	height:200px;
+	font-size: 100%;
+	padding-left:10%;
+}
+.regidiv{
+	width:90%;
+	height:25%;
+	margin-top:2%;
+	margin-bottom:4%;
+}
+.regidiv button{
+	width:100%;
+	height:100%;
+	color: white;
+	background-color:black;
+	font-size:150%;
+	font-weight:bold;
+}
+hr{
+	width:90%;
+	height:4px;
+	background-color:gray;
+}
+.nazaj{
+	width:90%;
+	height:25%;
+	margin-top:2%;
+	margin-bottom:4%;
+}
+
+.nazaj button{
+	width:100%;
+	height:100%;
+	font-size:150%;
+	font-weight:bold;
+}
+.noga{
+	width:100%;
+	height:70px;
+	display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-weight:bold;
+  font-size:100%;
+  word-spacing: 10px;
+}

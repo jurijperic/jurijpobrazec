@@ -1,0 +1,171 @@
+*{
+	padding:0;
+	margin:0;
+	
+}
+
+
+.pisavca {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+	height:100%;
+	width:100%;
+	justify-content: center;
+	align-items: center; 
+	display: inline-block;
+	position: relative;
+}
+.favikon{
+	width:64px;
+	height:64px;
+}
+.glava{
+	padding-left: 5%;
+    padding-top: 5%;
+	margin-bottom:1%;
+	height:6%;
+	width:100%;
+}
+	
+	
+.podglava{
+	
+	width:100%;
+	height:70%;
+	display: flex;
+    padding-left: 5%;
+	position: relative;
+	 
+ 
+}
+.slikca{
+	width: 78px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+.slika{
+	width:78px;
+	height:78px;
+}
+
+.skupno{
+	margin-top:2%;
+	width:40%;
+	height:92%;
+	border:2px solid black;
+	word-break: keep-all; /*ne razbiva besed nrdi novo vrstico samo med bvesedami*/
+	margin:1% auto; /* prvi je zgorej spodej in drgi je levo desno*/
+	padding:2%;
+}
+.naslov{
+	white-space: nowrap; /* ostanejo presledki*/
+	height:10%;
+	width:92%;
+	font-size: 80%; 
+}
+
+.obrazec{
+	white-space: nowrap; 
+	width:100%;
+	height:20%;
+	margin-top:2%;	
+	
+}
+
+.mail{
+	height:40px;
+	width:90%;
+}
+.mail input{
+	height:100%;
+	width:100%;
+	border: none; 
+	border-bottom:2px solid black;
+	background-color: #f0f0f0;
+	font-size:100%;
+}
+.geslo{
+	height:40px;
+	width:90%;
+	padding-top:8%;
+}
+
+.geslo input{
+	height:100%;
+	width:100%;
+	border: none; 
+	border-bottom:2px solid black;
+	background-color: #f0f0f0;
+	font-size:100%;
+}
+
+.pozges{
+	width:100%;
+	height:8%;
+	font-size:70%;
+	 text-decoration: underline;
+	 padding-top:3%;
+	 margin:2%;
+}
+.zapomni{
+	width:100%;
+	height:8%;
+	align-items: center; 
+	display: flex;
+	
+}
+.kvadrat{
+	height:20px;
+	width:20px;	
+	align-items: center;
+}
+.napis{
+	font-size:20px;
+	font-weight:bold;
+	white-space: nowrap;
+  align-items: center;
+}
+.prijavadiv{
+	width:100%;
+	height:8%;
+	margin-top:4%;
+	margin-bottom:4%;
+}
+.gumbprijava{
+	height:100%;
+	width:100%;
+	color:white;
+	background-color:black;
+	font-size:30px;
+}
+
+.regdiv{
+	width:100%;
+	height:8%;
+	background-color:black;
+	margin-top:4%;
+	margin-bottom:4%;
+}
+.gumbreg{
+	height:100%;
+	width:100%;
+	font-size:25px;
+}
+.podnapisi{
+	margin-top:10%;
+	height:5%;
+	width:100%;
+	font-size:20px;
+	font-weight:bold;
+	 display: flex;
+	justify-content: center; 
+	align-items: center;
+	
+}
+	
